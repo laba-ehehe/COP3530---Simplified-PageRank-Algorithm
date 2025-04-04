@@ -1,15 +1,20 @@
+// Name: Lan Anh Do
+// UFID: 84224811
+
 #pragma once
-
 #include <string>
-
+#include <unordered_map>
+#include <vector>
+#include <set>
 using namespace std;
 
 class AdjacencyList {
-    private:
-    //Think about what member variables you need to initialize
-    public:
-    //Think about what helper functions you will need in the algorithm
-    string PageRank(int n);
-};
+private:
+    unordered_map<string, vector<string>> adjList;
+    unordered_map<string, int> outdegree;
+    set<string> allWebpages;
 
-// This class and method are optional.
+public:
+    void AddEdge(const string& src, const string& dest);
+    string PageRank(int p);
+};
